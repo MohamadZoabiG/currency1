@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">currency</string>
+    <string-array name="currency_type">
+        <item>dollar</item>
+        <item>shekel</item>
+    </string-array>
+</resources>
