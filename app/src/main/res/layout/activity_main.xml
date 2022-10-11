@@ -4,56 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"><![CDATA[
+
+    />
+
+
+
+
+
+    ]]>
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="285dp"
+        android:layout_height="35dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="241dp"
+        android:layout_marginTop="244dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="218dp"
         android:entries="@array/currency_type"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewMain"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.612"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    />
 
     <TextView
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="187dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="208dp"
         android:text="RESULT"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageViewMain"
-        app:layout_constraintStart_toStartOf="@+id/btnMain"
         app:layout_constraintTop_toBottomOf="@+id/btnMain" />
 
     <Button
         android:id="@+id/btnMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="64dp"
         android:onClick="change"
         android:text="Change"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner2" />
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="282dp"
+        android:layout_height="34dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="1dp"
         android:entries="@array/currency_type"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.622"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
@@ -68,41 +73,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageViewMain"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="89dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="193dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/result"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="315dp"
-        tools:layout_editor_absoluteY="501dp" >
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMain">
 
     </RadioGroup>
 
     <RadioButton
         android:id="@+id/radiolight"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Light"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="627dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radiodark" />
 
     <RadioButton
         android:id="@+id/radiodark"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="Dark"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="579dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result" />
+
+    <ImageView
+        android:id="@+id/imageViewMain1"
+        android:layout_width="39dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="241dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="51dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewMain2"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageViewMain2"
+        android:layout_width="39dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="205dp"
+        app:layout_constraintBottom_toTopOf="@+id/radiodark"
+        app:layout_constraintEnd_toStartOf="@+id/spinner2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewMain1"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
