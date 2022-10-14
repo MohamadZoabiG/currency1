@@ -1,13 +1,17 @@
 package com.example.currency;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private Spinner sp2;
     private TextView result;
     private EditText currency;
+    private RadioButton btn1;
+    private RadioButton btn2;
+    private RadioGroup radiog;
+    private CheckBox checkBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,30 +47,40 @@ public class MainActivity extends AppCompatActivity {
         sp2=findViewById(R.id.spinner2);
         result=findViewById(R.id.result);
         currency=findViewById(R.id.etMain);
+        btn1=findViewById(R.id.radioDark);
+        btn2=findViewById(R.id.radioLight);
+        radiog=findViewById(R.id.radioGroup);
+        checkBox=findViewById(R.id.checkBox1);
+
         sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String currency1 =sp1.getSelectedItem().toString();
-                String currency2 = sp2.getSelectedItem().toString();
-
                 if(currency1.equals("dollar"))
                 {
                     imageView1.setImageResource(R.drawable.dollar);
                 }
-                if(currency1.equals("shekel"))
-                {
+                else{
                     imageView1.setImageResource(R.drawable.shekel);
 
                 }
-                 if(currency2.equals("dollar"))
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        sp2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String currency1 =sp2.getSelectedItem().toString();
+                if(currency1.equals("dollar"))
                 {
                     imageView2.setImageResource(R.drawable.dollar);
-
                 }
-                 if(currency2.equals("shekel"))
-                {
+                else  {
                     imageView2.setImageResource(R.drawable.shekel);
-
                 }
             }
 
@@ -117,12 +135,15 @@ public class MainActivity extends AppCompatActivity {
 
             return;
         }
+    }
 
 
+    public void Dark(View view) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+    }
 
-
-
-
+    public void Light(View view) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
     }
 }
